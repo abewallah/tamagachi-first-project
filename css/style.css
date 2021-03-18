@@ -1,0 +1,346 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+button {
+  outline: none;
+}
+
+main {
+  background-color: rgb(54, 87, 87);
+  height: 1000px;
+  width: 1000px;
+  border: 4px solid black;
+  border-radius: 40px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+/*========COVER PAGE====ILLOUSION====*/
+#coverPage {
+  display: flex;
+  align-items: center;
+  background-image: url('../images/digmonClock.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.coverPageNaming {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 30%;
+  width: 200px;
+  color: rgb(61, 47, 13);
+}
+.userInput {
+  border-radius: 5px;
+  background-color: burlywood;
+  height: 50px;
+  width: 150px;
+  margin-bottom: 25px;
+}
+#start {
+  width: 80px;
+  background-color: green;
+}
+.nameTags {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  margin: 10px auto;
+  color: white;
+  background-color: rgba(221, 150, 100, 0.2);
+  border: 3px solid black;
+  border-radius: 10px;
+  width: 900px;
+  height: 60px;
+  justify-content: space-between;
+  position: relative;
+}
+span {
+  color: rgb(46, 18, 201);
+  padding: 5px;
+  background-color: blanchedalmond;
+  border: 2px solid rgb(8, 8, 8);
+  border-radius: 5px;
+  position: relative;
+}
+h2 {
+  color: blue;
+  font-family: monospace, sans-serif;
+}
+
+/*================SCREEN w/ ANIMATION===========*/
+.screen {
+  background-image: url('../images/animatedJG.jpg');
+  background-size: cover;
+  border-radius: 30px;
+  border: 5px solid rgb(12, 11, 12);
+  flex-grow: 2;
+  display: flex;
+  position: relative;
+  align-items: center;
+  overflow: hidden;
+}
+#night {
+  position: absolute;
+  margin: 20px auto;
+  background-color: rgb(2, 2, 59);
+  width: 995px;
+  height: 725px;
+  opacity: 0;
+  top: 60px;
+  border-radius: 30px;
+
+  /* margin: 10px auto; */
+}
+#playingImg {
+  position: absolute;
+  background-image: url('../images/giphyPlayImage.gif');
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+  left: 450px;
+  top: 150px;
+  opacity: 0;
+}
+
+#digmonImg {
+  height: 25%;
+  width: 25%;
+  position: absolute;
+}
+#morph {
+  width: 100px;
+  height: 60px;
+  border-radius: 15px;
+  background-color: red;
+  position: absolute;
+  z-index: 1;
+}
+.animate {
+  transform: scaleX(-1);
+  animation-name: walkAround;
+  animation-duration: 8s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+}
+.reverseAnimate {
+  animation-name: reverseWalkAround;
+  animation-duration: 8s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+}
+.deadPet {
+  bottom: 20px;
+  left: 450px;
+}
+/*=====GAME OVER MSG/ Restart BTN=====*/
+
+#restartBtn {
+  position: absolute;
+  font-size: 20px;
+  box-shadow: darkblue;
+  color: rgb(206, 35, 35);
+  border-radius: 20px;
+  width: 250px;
+  height: 100px;
+  left: 350px;
+  z-index: 1;
+}
+/*===================BOTTOM PANEL BUTTONS===========================================*/
+.bottomPanel {
+  display: flex;
+  flex-direction: row;
+  border-radius: 30px;
+  border: 5px solid rgb(7, 7, 7);
+  background-color: rgb(20, 20, 20);
+  width: auto;
+  height: 15%;
+}
+.tackingCareBtn {
+  width: 25%;
+  border-radius: 100px;
+  height: 100%;
+}
+.startBtn {
+  background-color: green;
+  font-size: 2em;
+  font-weight: bolder;
+}
+.hungerBtn {
+  background-color: chocolate;
+}
+.sleepBtn {
+  background-color: cornflowerblue;
+}
+.boredBtn {
+  background-color: yellow;
+}
+footer {
+  text-align: center;
+  font-size: 2em;
+  color: rgb(228, 217, 209);
+}
+
+/*===========KEY FRAME / MOVEMENT OF AVATAR=====*/
+@keyframes walkAround {
+  from {
+    left: 0;
+    bottom: 50px;
+    /* transform: scaleX(-1) translateX(0px) translateY(10px); */
+  }
+  50% {
+    left: 350px;
+    bottom: 150px;
+    width: 20%;
+    /* transform: translateX(60px) translateY(30px); */
+  }
+  to {
+    left: 700px;
+    bottom: 50px;
+    /* transform: scaleX(-1) translateX(150px) translateY(100px); */
+  }
+}
+
+@keyframes reverseWalkAround {
+  from {
+    left: 700px;
+    bottom: 50px;
+    /* transform: translateX(150px) translateY(100px); */
+  }
+  50% {
+    left: 350px;
+    bottom: 150px;
+    width: 20%;
+    /* transform: translateX(60px) translateY(30px); */
+  }
+  to {
+    left: 0;
+    bottom: 50px;
+    /* transform: translateX(40px) translateY(10px); */
+  }
+}
+
+/* ========MEDIA QUERIES FOR WHEN THE SCREEN SIZE REDUCES TO 800 PX===============================*/
+@media (max-width: 800px) {
+  main {
+    height: 500px;
+    width: 500px;
+  }
+  .coverPageNaming {
+    width: 50px;
+  }
+  .userInput {
+    height: 30px;
+    width: 80px;
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-size: 12px;
+  }
+  h2 {
+    font-size: 10px;
+  }
+  button i {
+    font-style: 5px;
+  }
+  #start {
+    width: 50px;
+  }
+  #icon {
+    font-size: 15px;
+  }
+  .nameTags {
+    margin: 5px auto;
+    width: 450px;
+    height: 30px;
+  }
+  span {
+    padding: 2px;
+  }
+  #night {
+    width: 495px;
+    height: 393px;
+    top: 20px;
+  }
+  #playingImg {
+    width: 150px;
+    height: 150px;
+    top: 85px;
+    left: 250px;
+  }
+  #digmonImg {
+    height: 18%;
+    width: 18%;
+  }
+  #morph {
+    width: 70px;
+    height: 50px;
+    border-radius: 15px;
+  }
+  .deadPet {
+    bottom: 10px;
+    left: 220px;
+  }
+  #restartBtn {
+    font-size: 10px;
+    width: 125px;
+    height: 50px;
+    left: 175px;
+  }
+  .bottomPanel {
+    height: 7.5%;
+  }
+  .startBtn {
+    font-size: 1em;
+  }
+  footer {
+    font-size: 1em;
+  }
+  @keyframes walkAround {
+    from {
+      left: 0;
+      bottom: 10px;
+      /* transform: scaleX(-1) translateX(0px) translateY(10px); */
+    }
+    50% {
+      left: 110px;
+      bottom: 70px;
+      width: 12%;
+      /* transform: translateX(60px) translateY(30px); */
+    }
+    to {
+      left: 330px;
+      bottom: 25px;
+      /* transform: scaleX(-1) translateX(150px) translateY(100px); */
+    }
+  }
+
+  @keyframes reverseWalkAround {
+    from {
+      left: 330px;
+      bottom: 25px;
+      /* transform: translateX(150px) translateY(100px); */
+    }
+    50% {
+      left: 110px;
+      bottom: 70px;
+      width: 12%;
+      /* transform: translateX(60px) translateY(30px); */
+    }
+    to {
+      left: 0;
+      bottom: 10px;
+      /* transform: translateX(40px) translateY(10px); */
+    }
+  }
+}

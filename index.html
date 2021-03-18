@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--jQuery-->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <!--JS-->
+    <script src="./js/classes.js" defer></script>
+    <script src="./js/app.js" defer></script>
+    <!--CSS-->
+    <link rel="stylesheet" href="./css/style.css" />
+    <!--FONT AWSOME-->
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <title>Tamagachi Pet</title>
+  </head>
+  <body>
+    <main id="coverPage">
+      <div class="coverPageNaming">
+        <h1>Name Your Creature</h1>
+        <input class="userInput" type="text" placeholder="Name Creature" />
+        <button id="start">Enter Name</button>
+      </div>
+    </main>
+
+    <main id="mainContainer">
+      <section class="nameTags">
+        <h2>Name:<span id="nameChange"></span></h2>
+        <h2>Age:<span id="ageChange"></span></h2>
+        <h2>Hunger:<span id="hungerChange"></span></h2>
+        <h2>Sleep:<span id="sleepChange"></span></h2>
+        <h2>Bored:<span id="boredChange"></span></h2>
+      </section>
+
+      <section class="screen">
+        <img
+          id="digmonImg"
+          class="animate"
+          src="./images/giphyRed.gif"
+          alt="creature"
+        />
+      </section>
+      <!--lights Off switch for Sleep Btn-->
+      <section id="night"></section>
+      <!--Playing Imgage for Bored-->
+      <div id="playingImg"></div>
+      <section class="bottomPanel">
+        <button class="tackingCareBtn startBtn">Start Game</button>
+        <button class="tackingCareBtn hungerBtn">
+          <i id="icon" class="fas fa-utensils fa-5x"></i>
+        </button>
+
+        <button class="tackingCareBtn sleepBtn">
+          <i id="icon" class="fas fa-bed fa-5x"></i>
+        </button>
+
+        <button class="tackingCareBtn boredBtn">
+          <i id="icon" class="fas fa-running fa-5x"></i>
+        </button>
+      </section>
+      <footer>Livley Creatures</footer>
+    </main>
+  </body>
+</html>
